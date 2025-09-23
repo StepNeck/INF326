@@ -38,7 +38,7 @@ def callback(ch, method, properties, body):
         print(f"✅ {ciudad} interesado. Distancia: {distancia:.2f} km")
         try:
             r = requests.get(f"http://127.0.0.1:8000/sismos/{evento['id']}")
-            print(f"ℹ️  Detalles detallada del sismo: {r.json()}")
+            print(f"ℹ️  Detalles del sismo: {r.json()}")
         except Exception as e:
             print(f"⚠️  Error al consultar API: {e}")
     else:
