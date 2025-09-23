@@ -1,0 +1,37 @@
+[
+  {
+    "id": "eq_arica",
+    "lat": -18.50,
+    "lon": -70.30
+  },
+  {
+    "id": "eq_coquimbo",
+    "lat": -30.00,
+    "lon": -71.40
+  },
+  {
+    "id": "eq_valpo",
+    "lat": -33.00,
+    "lon": -71.60
+  },
+  {
+    "id": "eq_concepcion",
+    "lat": -36.80,
+    "lon": -73.05
+  },
+  {
+    "id": "eq_punta_arenas",
+    "lat": -53.15,
+    "lon": -70.90
+  },
+  {
+    "id": "eq_central_chile",
+    "lat": -34.5,
+    "lon": -71.0
+  },
+  {
+    "id": "eq_far_north",
+    "lat": -15.0,
+    "lon": -72.0
+  }
+]
