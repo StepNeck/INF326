@@ -28,8 +28,9 @@ pip install -r requirements.txt
 ```
 
 ## Ejecución
-### 1. publisher's
-- Debes abrir una terminal por cada publisher. En esta tarea hay **5 publisher** que representan ciudades.
+> **_NOTA:_**  Se debe estar ejecutando El container de RabbitMQ en Docker para que el sistema funcione.
+### 1. Subscriber's
+- Debes abrir una terminal por cada publisher. En esta tarea hay **5 Subscriber's** que representan ciudades.
   - Arica
   - Coquimbo
   - Valparaiso
@@ -44,7 +45,7 @@ pip install -r requirements.txt
 
   \<ciudad> deben reemplazarlo por alguno de los nombres en la lista anterior.
 
-### 2. Subscriber
+### 2. Publisher
 - Se encarga de enviar los eventos que se encuentran en *events.json* que contienen datos mínimos de sismos.
 
   ```bash
