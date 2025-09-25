@@ -1,15 +1,14 @@
-from typing import Union
-
 from fastapi import FastAPI
+
+import json
 
 app = FastAPI()
 
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
+@app.get("/sismos/{earthquake_id}")
+def read_item(earthquake_id: str):
+    with open("earthquakes.json") as f:
+        earthquakes = json.load(f)
+    
+    for earthquake in earthquakes:
+        if earthquake["id"] == earthquake_id:
+            return earthquake
