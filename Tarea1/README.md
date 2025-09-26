@@ -1,3 +1,8 @@
+### Integrantes
+- Cristóbal Benavides - 202073106-3 - cristobal.benavidesp@usm.cl
+- Raúl Cuello - 201903007-8 - raul.cuello@sansano.usm.cl
+- Kevin Vega - 202073064-4 - kevin.vega@usm.cl
+
 ## Instalación
 ### 1.  RabbitMQ en Docker:
 ```bash

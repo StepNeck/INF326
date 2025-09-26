@@ -3,6 +3,11 @@ import json
 import pika
 import requests
 from geopy.distance import geodesic
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+API_URL = os.getenv("API_URL")
 
 # Diccionario con las coordenadas de cada ciudad; (latitud, longitud)
 region = {
@@ -37,12 +42,10 @@ def callback(ch, method, properties, body):
     if distancia < 500:
         print(f"✅ {ciudad} interesado. Distancia: {distancia:.2f} km")
         try:
-            r = requests.get(f"http://127.0.0.1:8000/sismos/{evento['id']}")
+            r = requests.get(f"{API_URL}/sismos/{evento['id']}")
             print(f"ℹ️  Detalles del sismo: {r.json()}")
         except Exception as e:
             print(f"⚠️  Error al consultar API: {e}")
-    else:
-        print(f"❌ {ciudad} ignorado. Distancia: {distancia:.2f} km")
 
 # Conexión a RabbitMQ
 connection = pika.BlockingConnection(pika.ConnectionParameters(host="localhost"))

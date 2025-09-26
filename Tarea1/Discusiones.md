@@ -22,7 +22,8 @@ Trazabilidad: Es problemático determinar si una alerta llegó a todos los desti
 
 Consistencia de datos: En caso de que se acumulen muchos mensajes en un corto periodo de tiempo, en caso de muchas réplicas de sismos por ejemplo, puede llegar información atrasada dado que los reportes deben ser inmediatos.
 
-# Discusión acerca de cómo podría utilizar el “Back of the Evelope” del sistema para estimar el uso de este y justificar la arquitectura propuesta
+# Discusión acerca de cómo podría utilizar el “Back of the Envelope” del sistema para estimar el uso de este y justificar la arquitectura propuesta
 *(no lo calcule; solo discuta cómo sería posible calcular con la información que posee del fenómeno que se notifica)*
  
-Se podría utilizar esta estrategia para ver si la arquitectura soporta la carga esperada y puede entregar respuestas en tiempo requerido. Por ejemplo tomando la cantidad de subscriptores por la cantidad de mensajes esperados por día según la cantidad de sismos relevantes, además se puede tener en cuenta el tamaño de los mensajes para calcular el ancho de banda; y la distribución de los subscriptores para estimar si las alertas llegarán en un tiempo razonable, por ejemplo menos de 10 segundos.
+Se podría utilizar esta estrategia para ver si la arquitectura soporta la carga esperada y puede entregar respuestas en tiempo requerido. Por ejemplo tomando la cantidad de subscriptores por la cantidad de mensajes esperados por día según la cantidad de sismos relevantes, además se puede tener en cuenta el tamaño de los mensajes para calcular el ancho de banda; y la distribución de los subscriptores para estimar si las alertas llegarán en un tiempo razonable, por ejemplo, [entre 6 a 12 segundos](https://www.usgs.gov/data/data-release-latency-testing-wireless-emergency-alerts-intended-shakealert-earthquake-early).
+
