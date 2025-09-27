@@ -46,12 +46,6 @@ Set-ExecutionPolicy Unrestricted
 pip install "fastapi[standard]"
 ```
 
-### 2.3 Iniciar API
-
-```bash
-fastapi dev main.py
-```
-
 ### 3. RabbitMQ en Docker
 
 ```bash
@@ -70,9 +64,15 @@ pip install -r requirements.txt
 
 > **_NOTA:_** Se debe estar ejecutando El container de RabbitMQ en Docker para que el sistema funcione.
 
-### 1. Subscriber's
+### 1 Iniciar API
 
-- Debes abrir una terminal por cada publisher. En esta tarea hay **5 Subscriber's** que representan ciudades.
+```bash
+fastapi dev main.py
+```
+
+### 2. Subscriber's
+
+- Debes abrir una terminal por cada subscriber. En esta tarea hay **5 Subscriber's** que representan ciudades.
 
   - Arica
   - Coquimbo
@@ -88,7 +88,7 @@ pip install -r requirements.txt
 
   \<ciudad> deben reemplazarlo por alguno de los nombres en la lista anterior.
 
-### 2. Publisher
+### 3. Publisher
 
 - Se encarga de enviar los eventos que se encuentran en _events.json_ que contienen datos mínimos de sismos.
 
