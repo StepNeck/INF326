@@ -12,11 +12,11 @@
   * **Reusabilidad**: La solución permite que otros sistemas reutilicen la arquitectura para otros fenómenos naturales (ej. Tsunamis o incendios) haciendo leves modificaciones.
 
 - ### Desventajas
-  **Fiabilidad**: La propia naturaleza del patrón hace que exista un riesgo de pérdida de mensajes si los suscriptores fallan esto debido a la comunicación asíncrona. Los mensajes pueden perderse o ser susceptibles a corrupciones. 
+  * **Fiabilidad**: La propia naturaleza del patrón hace que exista un riesgo de pérdida de mensajes si los suscriptores fallan esto debido a la comunicación asíncrona. Los mensajes pueden perderse o ser susceptibles a corrupciones. 
 
-  **Trazabilidad limitada** (Fiabilidad): Es complejo verificar que todos los eventos llegaron efectivamente a cada destino, lo que es crítico en un sistema que alerta emergencias.
+  * **Trazabilidad limitada** (Fiabilidad): Es complejo verificar que todos los eventos llegaron efectivamente a cada destino, lo que es crítico en un sistema que alerta emergencias.
 
- * **Disponibilidad**: En caso de múltiples réplicas de sismos seguidas, algunos mensajes pueden retrasarse. Esto genera inconsistencias temporales cr´ticas en un sistema de emergencias.
+  * **Disponibilidad**: En caso de múltiples réplicas de sismos seguidas, algunos mensajes pueden retrasarse. Esto genera inconsistencias temporales cr´ticas en un sistema de emergencias.
 
 
 
