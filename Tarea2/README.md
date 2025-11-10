@@ -5,7 +5,9 @@
 ---
 
 ## 1. Explicación del Trabajo realizado
-> **Suposición:** El sistema que pide desarrollar la tarea es del tipo Bitly donde su función principal es el servicio de acortamiento de URL.
+> **Suposición 1:** El sistema que pide desarrollar la tarea es del tipo Bitly donde su función principal es el servicio de acortamiento de URL.
+
+> **Suposición 2:** Cómo la arquitectura 1 y 2 son nodos distintos, se hace el supuesto que "Shortener DB" es individual para cada arquitectura y solo fue un alcance de nombre en el esquema.
 
 Ambas arquitecturas implementan la misma API REST con dos endpoints principales (POST /shorten y GET /{hash_code}), pero difieren en su diseño interno, composición de servicios y tecnologías complementarias:
 

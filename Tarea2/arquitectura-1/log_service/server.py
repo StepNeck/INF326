@@ -16,7 +16,7 @@ redis_client = aioredis.from_url(REDIS_URL, decode_responses=True)
 
 class LogServiceServicer(pb2_grpc.LogServiceServicer):
     async def send_log_to_redis(self, url: str, timestamp: str):
-        # Guardamos cada log como lista en Redis
+        # Guarda cada log como lista en Redis
         await redis_client.rpush("url_hits", f"{timestamp}|{url}")
 
     def SendUrlHit(self, request, context):

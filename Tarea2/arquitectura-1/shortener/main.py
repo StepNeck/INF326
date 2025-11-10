@@ -36,7 +36,6 @@ async def redirect_to_original(short_hash: str) -> Redirect | Response:
         if not long_url:
             return {"error": "URL no encontrada"}
 
-        # Log gRPC (no bloquea redirección)
         try:
             with grpc.insecure_channel(GRPC_SERVER) as channel:
                 stub = log_service_pb2_grpc.LogServiceStub(channel)
