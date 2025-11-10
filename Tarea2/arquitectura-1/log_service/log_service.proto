@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package log_service;
+
+service LogService {
+  rpc SendUrlHit(UrlHit) returns (LogResponse);
+}
+
+message UrlHit {
+  string url = 1;
+  string timestamp = 2;
+}
+
+message LogResponse {
+  string status = 1;
+}

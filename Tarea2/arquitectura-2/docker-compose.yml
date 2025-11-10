@@ -1,10 +1,26 @@
 services:
-  redis:
+  redis2:
     image: redis:latest
-    container_name: redis
+    container_name: redis2
     ports:
-      - "6379:6379"
+      - "6380:6379"
     volumes:
-      - redis_data:/data
+      - redis2_data:/data
+
+  api2:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    container_name: api2
+    depends_on:
+      - redis2
+    environment:
+      - REDIS_URL=redis://redis2:6379
+      - REDIS_HOST=redis2
+      - REDIS_PORT=6379
+      - API_URL=http://localhost:8080
+    ports:
+      - "8080:8080"
+
 volumes:
-  redis_data:
+  redis2_data:

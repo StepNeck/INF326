@@ -1,0 +1,32 @@
+services:
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
+
+  logservice:
+    build:
+      context: .
+      dockerfile: log_service/Dockerfile
+    container_name: log_service
+    ports:
+      - "50051:50051"
+    volumes:
+      - ./log_service:/app/log_service  # <-- para desarrollo
+
+  shortener:
+    build:
+      context: .
+      dockerfile: shortener/Dockerfile
+    container_name: shortener
+    depends_on:
+      - redis
+      - logservice
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+      - GRPC_SERVER=logservice:50051
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./log_service:/app/log_service  # <-- permite importar log_service_pb2

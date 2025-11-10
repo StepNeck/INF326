@@ -1,0 +1,7 @@
+litestar[redis]
+grpcio
+grpcio-tools
+pybase62
+grpcio
+grpcio-tools
+uvicorn

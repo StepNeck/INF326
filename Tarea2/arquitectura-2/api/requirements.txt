@@ -1,3 +1,4 @@
 litestar[standard]>=2.4.0,<3.0.0
 pybase62
 redis>=5.0.0
+uvicorn
